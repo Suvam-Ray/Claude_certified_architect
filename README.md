@@ -1,7 +1,8 @@
 # Claude Certified Architect - Learning Material
 
 All scripts and illustrations in this repository are in working state and have been tested by **Suvam Ray**.  
-**Connect with Suvam:** [suvamray2008@gmail.com](mailto:suvamray2008@gmail.com) for queries.
+**Connect with Suvam:** [suvamray2008@gmail.com](mailto:suvamray2008@gmail.com) for queries.  
+**LinkedIn:** [linkedin.com/in/suvam](https://www.linkedin.com/in/suvam/)
 
 **Course Source:** [Anthropic Skilljar](https://anthropic.skilljar.com/)
 
