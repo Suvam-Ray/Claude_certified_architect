@@ -1,0 +1,17 @@
+[
+  {
+    "task": "Extract all IAM role ARNs from an AWS CloudTrail log file. The ARNs follow the pattern 'arn:aws:iam::ACCOUNT_ID:role/ROLE_NAME'",
+    "format": "regex",
+    "solution_criteria": "The regex must accurately match all valid IAM role ARNs and capture the account ID and role name components"
+  },
+  {
+    "task": "Create a JSON configuration template for an AWS Lambda function that specifies runtime, memory, timeout, and environment variables for a Node.js application",
+    "format": "json",
+    "solution_criteria": "The JSON must be valid, include required Lambda configuration keys, and demonstrate proper structure for environment variables"
+  },
+  {
+    "task": "Write a Python function that takes an AWS S3 bucket name and prefix as arguments and returns a dictionary containing the total size of all objects matching that prefix",
+    "format": "python",
+    "solution_criteria": "The function must use boto3, handle pagination for large result sets, calculate total size in bytes, and handle edge cases like empty prefixes"
+  }
+]

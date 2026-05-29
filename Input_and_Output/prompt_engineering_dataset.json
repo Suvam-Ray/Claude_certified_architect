@@ -1,0 +1,48 @@
+[
+  {
+    "prompt_inputs": {
+      "height": "",
+      "weight": "",
+      "goal": "",
+      "restrictions": ""
+    },
+    "solution_criteria": [
+      "System handles empty inputs gracefully without crashing",
+      "System either requests required information or provides a default response",
+      "System clearly communicates what information is needed to proceed"
+    ],
+    "task_description": "",
+    "scenario": "Testing with empty or minimal input to verify error handling and default behavior"
+  },
+  {
+    "prompt_inputs": {
+      "height": "178 cm",
+      "weight": "82 kg",
+      "goal": "Build muscle mass while improving cardiovascular endurance",
+      "restrictions": "Vegetarian, lactose intolerant"
+    },
+    "solution_criteria": [
+      "Provides a nutrition plan that accommodates vegetarian diet and avoids dairy products",
+      "Includes specific macronutrient targets or food recommendations supporting both muscle building and cardiovascular goals",
+      "Offers practical, actionable guidance suitable for implementation within 1-2 weeks"
+    ],
+    "task_description": "",
+    "scenario": "Testing with real-world practical scenario to assess practical utility and accuracy"
+  },
+  {
+    "prompt_inputs": {
+      "height": "152 cm",
+      "weight": "48 kg",
+      "goal": "Build muscle mass and increase strength while maintaining cardiovascular fitness for competitive powerlifting",
+      "restrictions": "Vegan, gluten-free, severe peanut allergy, lactose intolerant"
+    },
+    "solution_criteria": [
+      "Addresses all four input parameters (height, weight, goal, restrictions) in the response",
+      "Provides protein sources that satisfy vegan and allergy restrictions",
+      "Includes actionable recommendations aligned with muscle-building and powerlifting goals",
+      "Acknowledges the edge case complexity of multiple simultaneous dietary constraints"
+    ],
+    "task_description": "",
+    "scenario": "Testing with maximum complexity or edge case parameters to evaluate robustness"
+  }
+]

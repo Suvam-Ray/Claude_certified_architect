@@ -1,0 +1,405 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Prompt Evaluation Report</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                line-height: 1.6;
+                margin: 0;
+                padding: 20px;
+                color: #333;
+            }
+            .header {
+                background-color: #f0f0f0;
+                padding: 20px;
+                border-radius: 5px;
+                margin-bottom: 20px;
+            }
+            .summary-stats {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+            .stat-box {
+                background-color: #fff;
+                border-radius: 5px;
+                padding: 15px;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+                flex-basis: 30%;
+                min-width: 200px;
+            }
+            .stat-value {
+                font-size: 24px;
+                font-weight: bold;
+                margin-top: 5px;
+            }
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-top: 20px;
+            }
+            th {
+                background-color: #4a4a4a;
+                color: white;
+                text-align: left;
+                padding: 12px;
+            }
+            td {
+                padding: 10px;
+                border-bottom: 1px solid #ddd;
+                vertical-align: top;
+            }
+            tr:nth-child(even) {
+                background-color: #f9f9f9;
+            }
+            .output-cell {
+                white-space: pre-wrap;
+            }
+            .score {
+                font-weight: bold;
+                padding: 5px 10px;
+                border-radius: 3px;
+                display: inline-block;
+            }
+            .score-high {
+                background-color: #c8e6c9;
+                color: #2e7d32;
+            }
+            .score-medium {
+                background-color: #fff9c4;
+                color: #f57f17;
+            }
+            .score-low {
+                background-color: #ffcdd2;
+                color: #c62828;
+            }
+            .output {
+                overflow: auto;
+                white-space: pre-wrap;
+            }
+
+            .output pre {
+                background-color: #f5f5f5;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                padding: 10px;
+                margin: 0;
+                font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+                font-size: 14px;
+                line-height: 1.4;
+                color: #333;
+                box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+                overflow-x: auto;
+                white-space: pre-wrap; 
+                word-wrap: break-word; 
+            }
+
+            td {
+                width: 20%;
+            }
+            .score-col {
+                width: 80px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Prompt Evaluation Report</h1>
+            <div class="summary-stats">
+                <div class="stat-box">
+                    <div>Total Test Cases</div>
+                    <div class="stat-value">3</div>
+                </div>
+                <div class="stat-box">
+                    <div>Average Score</div>
+                    <div class="stat-value">6.0 / 10</div>
+                </div>
+                <div class="stat-box">
+                    <div>Pass Rate (≥7)</div>
+                    <div class="stat-value">66.7%</div>
+                </div>
+            </div>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Scenario</th>
+                    <th>Prompt Inputs</th>
+                    <th>Solution Criteria</th>
+                    <th>Output</th>
+                    <th>Score</th>
+                    <th>Reasoning</th>
+                </tr>
+            </thead>
+            <tbody>
+    
+            <tr>
+                <td>Testing with empty or minimal input to verify error handling and default behavior</td>
+                <td class="prompt-inputs"><strong>height:</strong> <br><strong>weight:</strong> <br><strong>goal:</strong> <br><strong>restrictions:</strong> </td>
+                <td class="criteria">• System handles empty inputs gracefully without crashing<br>• System either requests required information or provides a default response<br>• System clearly communicates what information is needed to proceed</td>
+                <td class="output"><pre># One-Day Meal Plan Template Ready
+
+I'm prepared to generate a customized one-day meal plan for an athlete. Please provide the following information:
+
+```
+Height: [cm]
+Weight: [kg]
+Goal: [e.g., Build muscle, lose fat, improve endurance, etc.]
+Dietary restrictions: [e.g., Vegetarian, gluten-free, vegan, allergies, etc.]
+Budget consideration: [Yes/No - if yes, prioritize budget-friendly options]
+```
+
+Once you fill in the athlete's details, I'll create a comprehensive meal plan that includes:
+
+✓ **Daily calorie target** (calculated based on goals)  
+✓ **Macro breakdown** (protein, carbs, fat) per meal and daily total  
+✓ **Specific meal times** (6-7 meals/snacks optimized for performance)  
+✓ **All portions in grams** (precise, actionable)  
+✓ **Restriction-compliant foods only** (verified alternatives where needed)  
+✓ **Budget tips** (if requested)  
+
+**Ready when you are!** 🏋️</pre></td>
+                <td class="score-col"><span class="score score-low">2</span></td>
+                <td class="reasoning">While the solution handles empty inputs gracefully and communicates clearly what information is needed (meeting secondary criteria), it fundamentally fails the mandatory requirements. The task requires output that includes: (1) daily caloric total, (2) macronutrient breakdown, and (3) meals with exact foods, portions and timings. The solution provides none of these—it only offers a template promising future delivery. This is a request for input, not a solution. The mandatory requirements explicitly state the output SHOULD INCLUDE these elements, and this solution provides zero actual meal plan content.</td>
+            </tr>
+        
+            <tr>
+                <td>Testing with real-world practical scenario to assess practical utility and accuracy</td>
+                <td class="prompt-inputs"><strong>height:</strong> 178 cm<br><strong>weight:</strong> 82 kg<br><strong>goal:</strong> Build muscle mass while improving cardiovascular endurance<br><strong>restrictions:</strong> Vegetarian, lactose intolerant</td>
+                <td class="criteria">• Provides a nutrition plan that accommodates vegetarian diet and avoids dairy products<br>• Includes specific macronutrient targets or food recommendations supporting both muscle building and cardiovascular goals<br>• Offers practical, actionable guidance suitable for implementation within 1-2 weeks</td>
+                <td class="output"><pre># One-Day Muscle-Building Meal Plan
+**For 178cm, 82kg Vegetarian Athlete (Lactose Intolerant)**
+
+---
+
+## Daily Targets
+- **Calories:** 2,800-3,000 kcal
+- **Protein:** 140-150g (1.7-1.8g per kg bodyweight)
+- **Carbohydrates:** 380-400g
+- **Fat:** 80-90g
+
+---
+
+## BREAKFAST (7:00 AM)
+*Post-sleep muscle recovery meal*
+
+- Oatmeal (rolled oats): 80g dry
+- Banana: 150g
+- Almond butter: 30g
+- Unsweetened almond milk: 250ml
+- Ground flaxseed: 15g
+
+**Macros:** 580 cal | 18g protein | 78g carbs | 18g fat
+
+---
+
+## MID-MORNING SNACK (10:30 AM)
+*Pre-workout fuel*
+
+- Soy yogurt (plain, unsweetened): 200g
+- Granola (certified lactose-free): 40g
+- Blueberries: 80g
+- Raw honey: 10g
+
+**Macros:** 280 cal | 16g protein | 38g carbs | 7g fat
+
+---
+
+## LUNCH (1:00 PM)
+*Main protein source*
+
+- Quinoa (cooked): 200g
+- Black beans (cooked): 150g
+- Fresh spinach: 100g
+- Mixed bell peppers: 120g
+- Extra virgin olive oil: 15ml
+- Pumpkin seeds: 20g
+- Sea salt & fresh lemon juice to taste
+
+**Macros:** 620 cal | 24g protein | 82g carbs | 18g fat
+
+---
+
+## PRE-WORKOUT SNACK (3:30 PM)
+*Quick carbs + protein*
+
+- Rice cakes: 2 (50g total)
+- Peanut butter (natural): 25g
+- Apple: 180g
+
+**Macros:** 320 cal | 10g protein | 42g carbs | 12g fat
+
+---
+
+## DINNER (7:00 PM)
+*Post-workout recovery meal*
+
+- Lentil pasta (whole wheat, cooked): 150g
+- Firm tofu (pressed): 200g
+- Broccoli florets: 150g
+- Garlic & fresh ginger: 10g combined
+- Sesame oil: 10ml
+- Low-sodium tamari: 15ml
+
+**Macros:** 550 cal | 38g protein | 58g carbs | 16g fat
+
+---
+
+## EVENING SNACK (9:30 PM)
+*Optional - if needed for calorie target*
+
+- Raw almonds: 30g
+- Medjool dates: 40g
+
+**Macros:** 240 cal | 8g protein | 24g carbs | 14g fat
+
+---
+
+## Daily Summary
+| Macro | Amount | % of Calories |
+|-------|--------|---|
+| **Protein** | 144g | 21% |
+| **Carbs** | 382g | 55% |
+| **Fat** | 85g | 24% |
+| **Total Calories** | 2,940 | — |
+
+---
+
+## Key Tips
+✓ **Timing:** Lunch or Dinner aligns with training session (eat within 1-2 hours post-workout)  
+✓ **Hydration:** Drink 3-4 liters of water daily, plus electrolyte drink on training days  
+✓ **Protein Distribution:** Spread evenly across meals (25-30g per meal) for optimal muscle protein synthesis  
+✓ **Lactose-Free Verified:** All dairy alternatives are certified safe  
+✓ **Budget-Friendly:** Uses affordable staples (beans, lentils, oats, tofu, seasonal produce)  
+✓ **Customization:** Swap vegetables seasonally; rotate protein sources (tempeh, seitan, nuts)</pre></td>
+                <td class="score-col"><span class="score score-high">9</span></td>
+                <td class="reasoning">The solution fully satisfies all three mandatory requirements with precision: daily caloric total is clearly stated (2,940 kcal), macronutrient breakdown is provided both in individual meals and as a daily summary, and all six meals include exact foods with specific portions and times. It directly addresses both dietary restrictions (vegetarian + lactose intolerant) through verified alternatives and supports both goals (muscle building via 1.75g protein/kg and cardiovascular endurance via appropriate carbohydrate intake and meal timing). The guidance is practical and implementable within 1-2 weeks. The only minor limitation is the lack of explicit workout timing specification, which doesn't prevent implementation but reduces optimization precision. The solution meets all listed criteria without deficiencies.</td>
+            </tr>
+        
+            <tr>
+                <td>Testing with maximum complexity or edge case parameters to evaluate robustness</td>
+                <td class="prompt-inputs"><strong>height:</strong> 152 cm<br><strong>weight:</strong> 48 kg<br><strong>goal:</strong> Build muscle mass and increase strength while maintaining cardiovascular fitness for competitive powerlifting<br><strong>restrictions:</strong> Vegan, gluten-free, severe peanut allergy, lactose intolerant</td>
+                <td class="criteria">• Addresses all four input parameters (height, weight, goal, restrictions) in the response<br>• Provides protein sources that satisfy vegan and allergy restrictions<br>• Includes actionable recommendations aligned with muscle-building and powerlifting goals<br>• Acknowledges the edge case complexity of multiple simultaneous dietary constraints</td>
+                <td class="output"><pre># One-Day Muscle-Building Meal Plan
+**For 152cm, 48kg Vegan Athlete (Gluten-Free, Lactose-Intolerant, Severe Peanut Allergy)**
+
+---
+
+## Daily Targets
+- **Calories:** 2,200-2,400 kcal
+- **Protein:** 96-110g (2.0-2.3g per kg bodyweight for strength athletes)
+- **Carbohydrates:** 275-300g
+- **Fat:** 65-75g
+
+---
+
+## BREAKFAST (7:00 AM)
+*Post-sleep muscle recovery meal*
+
+- Gluten-free oatmeal (rolled oats): 70g dry
+- Banana: 120g
+- Tahini (sesame paste): 20g
+- Unsweetened almond milk: 250ml
+- Ground flaxseed: 12g
+- Sea salt: 1g
+
+**Macros:** 480 cal | 16g protein | 62g carbs | 16g fat
+
+---
+
+## MID-MORNING SNACK (10:00 AM)
+*Pre-workout fuel + amino acids*
+
+- Tofu yogurt (soy-based, unsweetened): 180g
+- Gluten-free granola (certified): 35g
+- Raspberries: 100g
+- Sunflower seed butter: 15g
+
+**Macros:** 310 cal | 14g protein | 34g carbs | 12g fat
+
+---
+
+## LUNCH (1:00 PM)
+*Main protein & carb source*
+
+- Quinoa (cooked): 180g
+- Tempeh: 120g (baked with spices)
+- Black beans (cooked): 120g
+- Sweet potato: 150g
+- Spinach (raw): 80g
+- Olive oil: 12ml
+- Pumpkin seeds: 18g
+- Turmeric & black pepper: 2g
+
+**Macros:** 640 cal | 28g protein | 78g carbs | 18g fat
+
+---
+
+## PRE-WORKOUT SNACK (3:30 PM)
+*Quick carbs + quick-digesting protein*
+
+- Rice cakes (gluten-free): 2 (45g)
+- Tahini: 20g
+- Dates (pitted): 50g
+- Coconut water: 200ml
+
+**Macros:** 340 cal | 8g protein | 48g carbs | 10g fat
+
+---
+
+## DINNER (7:00 PM)
+*Post-workout recovery meal - highest protein*
+
+- Gluten-free lentil pasta: 140g cooked
+- Extra-firm tofu: 200g (pan-fried with tamari)
+- Broccoli: 160g (steamed)
+- Mushrooms (mixed): 100g
+- Sesame oil: 12ml
+- Low-sodium tamari: 15ml
+- Garlic & ginger: 8g
+
+**Macros:** 550 cal | 38g protein | 56g carbs | 16g fat
+
+---
+
+## EVENING SNACK (9:00 PM)
+*Sustained-release protein*
+
+- Raw almonds: 28g
+- Dried figs: 40g
+- Hemp seeds: 10g
+
+**Macros:** 280 cal | 10g protein | 26g carbs | 16g fat
+
+---
+
+## Daily Summary
+| Macro | Amount | % of Calories |
+|-------|--------|---|
+| **Protein** | 114g | 19% |
+| **Carbs** | 304g | 51% |
+| **Fat** | 88g | 33% |
+| **Total Calories** | 2,600 | — |
+
+---
+
+## Key Tips for Powerlifter Success
+
+✓ **Timing:** Consume lunch 3-4 hours before training; dinner within 1-2 hours post-workout  
+✓ **Hydration:** 3.5-4 liters water daily (critical for strength performance)  
+✓ **Protein Distribution:** Spread intake across meals (</pre></td>
+                <td class="score-col"><span class="score score-medium">7</span></td>
+                <td class="reasoning">The solution meets all mandatory requirements with precision: it includes exact daily caloric total, complete macronutrient breakdown with percentages, and six meals with specific portions and timings. All four input parameters are directly addressed. The meal plan successfully navigates the complex intersection of vegan, gluten-free, lactose-intolerant, and severe peanut-allergy restrictions using appropriate protein sources. However, the caloric overage relative to stated targets and missing supplementation guidance represent meaningful deficiencies in secondary criteria. The solution is well-structured and practical but has room for optimization in caloric accuracy and nutritional completeness.</td>
+            </tr>
+        
+            </tbody>
+        </table>
+    </body>
+    </html>
+    
