@@ -1,0 +1,3 @@
+*.ipynb linguist-generated=true
+*.ipynb linguist-detectable=false
+*.ipynb -diff
