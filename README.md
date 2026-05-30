@@ -6,12 +6,17 @@ All scripts and illustrations in this repository are in working state and have b
 
 **Course Source:** [Anthropic Skilljar](https://anthropic.skilljar.com/)
 
-The notebook has been split into two parts for easier access on GitHub:
+The notebooks have been split into four parts for easier access on GitHub:
 
-- [**Part 1 — Fundamentals**](part1_fndmntl_claude_cert_architect.ipynb) — API Basics, Multi-turn Conversations, Prompts, Streaming, Structured Output, Eval, Prompt Engineering, Tools, RAG, Embeddings, BM25, Hybrid Search
-- [**Part 2 — Advanced**](part2_advncd_claude_cert_architect.ipynb) — Extended Thinking, Image/PDF Handling, Citations, Prompt Caching, Code Execution, MCP, Claude Code, Skills, Subagents, Hooks, SDK, Workflows & Agents
+### Fundamentals
+- [**Part 1a — API Fundamentals**](part1a_fndmntl_api.ipynb) — API Basics, Multi-turn Conversations, System Prompts, Temperature, Streaming
+- [**Part 1b — Prompting, Tools & RAG**](part1b_fndmntl_prompting_tools_rag.ipynb) — Structured Output, Eval, Prompt Engineering, Tool Usage, RAG, Embeddings, Vector DB, BM25, Hybrid Search
 
-<font color="red"><b>Recommended:</b></font> Start with Part 1, then continue to Part 2.
+### Advanced
+- [**Part 2a — Advanced Features & MCP**](part2a_advncd_features_mcp.ipynb) — Extended Thinking, Image/PDF Handling, Citations, Prompt Caching, Code Execution, MCP, Advanced MCP (Sampling, Logs, Roots)
+- [**Part 2b — MCP Transport, Claude Code & Agents**](part2b_advncd_mcp_claude_code_agents.ipynb) — Streamable HTTP, Claude Code, Skills, Subagents, Hooks, SDK, Workflows & Agents
+
+<font color="red"><b>Recommended order:</b></font> Part 1a → Part 1b → Part 2a → Part 2b.
 
 ## Summary
 
@@ -21,7 +26,9 @@ This comprehensive notebook covers everything needed to master Claude's API and 
 
 ## Table of Contents
 
-### 1. Claude API Fundamentals
+### Part 1a — API Fundamentals
+
+#### 1. Claude API Fundamentals
    - a) Using Claude API
    - b) Multi-turn Conversations
    - c) Chat Bot Exercise
@@ -29,7 +36,9 @@ This comprehensive notebook covers everything needed to master Claude's API and 
    - e) Temperature
    - f) Response Streaming
 
-### 2. Structured Output & Evaluation
+### Part 1b — Prompting, Tools & RAG
+
+#### 2. Structured Output & Evaluation
    - a) Generating Structured Data (Prefill & Stop Sequence)
    - b) Using Eval to Refine Prompts
    - c) Eval Task
@@ -40,14 +49,14 @@ This comprehensive notebook covers everything needed to master Claude's API and 
    - h) Step 3: Implementing Code-based Grader
    - i) Adding Solution Criteria for Better Grading
 
-### 3. Prompt Engineering
+#### 3. Prompt Engineering
    - a) Prompt Engineering
    - b) Be Clear and Direct
    - c) Be Specific
    - d) Providing Structure using XML Tags
    - e) Providing Examples
 
-### 4. Tool Usage
+#### 4. Tool Usage
    - a) Tool Use with Claude
    - b) Tool Function
    - c) Tool Schema
@@ -59,17 +68,17 @@ This comprehensive notebook covers everything needed to master Claude's API and 
    - i) Adding More Tools
    - j) Streaming Tool Calls & Fine-grained Calls
 
-### 5. Tools & Extensions
+#### 5. Tools & Extensions
    - a) Text Editor Tool
    - b) Web Search Tool
 
-### 6. RAG (Retrieval Augmented Generation)
+#### 6. RAG (Retrieval Augmented Generation)
    - a) RAG - Retrieval Augmented Generation
    - b) Chunking Strategies (chunk_by_char, chunk_by_sentence, chunk_by_section)
    - c) Semantic Search using Embeddings
    - d) Full RAG Flow
 
-### 7. Vector DB Operations
+#### 7. Vector DB Operations
    - a) In-memory Storage (Volatile)
    - b) Add Vectors
    - c) Search
@@ -77,33 +86,39 @@ This comprehensive notebook covers everything needed to master Claude's API and 
    - e) Persist to Disk
    - f) Retrieve Later
 
-### 8. Advanced Retrieval
+#### 8. Advanced Retrieval
    - a) BM25 Lexical Search
    - b) Hybrid Search (Semantic + BM25)
    - c) Notes on RAG Pipeline
 
-### 9. Advanced Claude Features
+### Part 2a — Advanced Features & MCP
+
+#### 9. Advanced Claude Features
    - a) Extended Thinking in Claude
    - b) Image Handling in Claude
    - c) PDF Handling in Claude
    - d) Citations in Claude
    - e) Prompt Caching
 
-### 10. Code Execution & Files API
+#### 10. Code Execution & Files API
    - a) Code Execution in Claude
    - b) Files API in Claude
 
-### 11. MCP (Model Context Protocol)
+#### 11. MCP (Model Context Protocol)
    - a) MCP Overview
    - b) MCP Components - Resources, Prompts, Tools
 
-### 12. Advanced MCP
+#### 12. Advanced MCP
    - a) Sampling
    - b) Logs and Progress Tracking
    - c) Roots
+
+### Part 2b — MCP Transport, Claude Code & Agents
+
+#### 12d. Advanced MCP (continued)
    - d) Streamable HTTP
 
-### 13. Claude Code
+#### 13. Claude Code
    - a) Claude Code - Introduction
    - b) Custom Commands in Claude Code
    - c) Adding Playwright MCP Server in Claude Code
@@ -114,7 +129,7 @@ This comprehensive notebook covers everything needed to master Claude's API and 
    - h) Hooks in Claude Code
    - i) Claude Code SDK
 
-### 14. Workflows & Agents
+#### 14. Workflows & Agents
    - a) Workflows and Agents - Overview
    - b) Evaluator-Optimizer Workflow
    - c) Parallelization Workflows
