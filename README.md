@@ -6,7 +6,12 @@ All scripts and illustrations in this repository are in working state and have b
 
 **Course Source:** [Anthropic Skilljar](https://anthropic.skilljar.com/)
 
-[Open the full notebook](01_Claude_Certified_architect.ipynb) for detailed explanations, code examples, and illustrations.
+The notebook has been split into two parts for easier access on GitHub:
+
+- [**Part 1 — Fundamentals**](part1_fndmntl_claude_cert_architect.ipynb) — API Basics, Multi-turn Conversations, Prompts, Streaming, Structured Output, Eval, Prompt Engineering, Tools, RAG, Embeddings, BM25, Hybrid Search
+- [**Part 2 — Advanced**](part2_advncd_claude_cert_architect.ipynb) — Extended Thinking, Image/PDF Handling, Citations, Prompt Caching, Code Execution, MCP, Claude Code, Skills, Subagents, Hooks, SDK, Workflows & Agents
+
+<font color="red"><b>Recommended:</b></font> Start with Part 1, then continue to Part 2.
 
 ## Summary
 
