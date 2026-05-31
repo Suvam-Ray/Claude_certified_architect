@@ -9,12 +9,12 @@ All scripts and illustrations in this repository are in working state and have b
 The notebooks have been split into four parts for easier access on GitHub:
 
 ### Fundamentals
-- [**Part 1a — API Fundamentals**](https://github.com/Suvam-Ray/Claude_certified_architect/blob/main/part1a_fndmntl_api.ipynb) — API Basics, Multi-turn Conversations, System Prompts, Temperature, Streaming
-- [**Part 1b — Prompting, Tools & RAG**](https://github.com/Suvam-Ray/Claude_certified_architect/blob/main/part1b_fndmntl_prompting_tools_rag.ipynb) — Structured Output, Eval, Prompt Engineering, Tool Usage, RAG, Embeddings, Vector DB, BM25, Hybrid Search
+- [**Part 1a — API Fundamentals**](https://colab.research.google.com/github/Suvam-Ray/Claude_certified_architect/blob/main/part1a_fndmntl_api.ipynb) — API Basics, Multi-turn Conversations, System Prompts, Temperature, Streaming
+- [**Part 1b — Prompting, Tools & RAG**](https://colab.research.google.com/github/Suvam-Ray/Claude_certified_architect/blob/main/part1b_fndmntl_prompting_tools_rag.ipynb) — Structured Output, Eval, Prompt Engineering, Tool Usage, RAG, Embeddings, Vector DB, BM25, Hybrid Search
 
 ### Advanced
-- [**Part 2a — Advanced Features & MCP**](https://github.com/Suvam-Ray/Claude_certified_architect/blob/main/part2a_advncd_features_mcp.ipynb) — Extended Thinking, Image/PDF Handling, Citations, Prompt Caching, Code Execution, MCP, Advanced MCP (Sampling, Logs, Roots)
-- [**Part 2b — MCP Transport, Claude Code & Agents**](https://github.com/Suvam-Ray/Claude_certified_architect/blob/main/part2b_advncd_mcp_claude_code_agents.ipynb) — Streamable HTTP, Claude Code, Skills, Subagents, Hooks, SDK, Workflows & Agents
+- [**Part 2a — Advanced Features & MCP**](https://colab.research.google.com/github/Suvam-Ray/Claude_certified_architect/blob/main/part2a_advncd_features_mcp.ipynb) — Extended Thinking, Image/PDF Handling, Citations, Prompt Caching, Code Execution, MCP, Advanced MCP (Sampling, Logs, Roots)
+- [**Part 2b — MCP Transport, Claude Code & Agents**](https://colab.research.google.com/github/Suvam-Ray/Claude_certified_architect/blob/main/part2b_advncd_mcp_claude_code_agents.ipynb) — Streamable HTTP, Claude Code, Skills, Subagents, Hooks, SDK, Workflows & Agents
 
 <font color="red"><b>Recommended order:</b></font> Part 1a → Part 1b → Part 2a → Part 2b.
 
